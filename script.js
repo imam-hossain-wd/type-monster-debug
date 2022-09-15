@@ -6,13 +6,12 @@ const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
 
 
-
-
 // variables
 let userText = "";
 let errorCount = 0;
 let startTime;
 let questionText = "";
+
 
 // Load and display question
 fetch("./texts.json")
@@ -20,21 +19,25 @@ fetch("./texts.json")
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
+    
   });
 
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
-
+  
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
     return display.removeChild(display.lastChild);
+  
   }
 
   // these are the valid character we are allowing to type
   const validLetters =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890!@#$%^&*()_+-={}[]'\".,?";
+    
+
 
   // if it is not a valid character like Control/Alt then skip displaying anything
   if (!validLetters.includes(newLetter)) {
@@ -49,9 +52,11 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    errorCount++;
   }
 
   // check if given question text is equal to user typed text
+
   if (questionText === userText) {
     gameOver();
   }
@@ -141,11 +146,8 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
-  const newTimespend = parseInt(timeSpent) // convert time parseInt 
+  const timeSpent = Math.trunc((currentTime - startTime) / 1000);
 
 
-  document.getElementById("show-time").innerHTML = `
-  
-  ${startTime ? newTimespend : 0} seconds`;
+  document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);

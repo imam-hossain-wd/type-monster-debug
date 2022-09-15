@@ -9,6 +9,7 @@ body {
   background-size: cover;
   background-position: left top;
   font-family: "Zilla Slab", serif;
+  min-height: 100vh;
 }
 
 .box-container {
@@ -63,8 +64,8 @@ body {
 }
 #result {
   position: fixed;
-  top: 10%; 
-  left: 10%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   height: 250px;
   width: 400px;
@@ -75,6 +76,9 @@ body {
   text-align: center;
   padding: 2rem;
 }
+
+
+
 #show-time{
   text-align: center;
   color: white;
@@ -93,8 +97,10 @@ body {
 .inactive {
   border: 2px solid white !important;
 }
+
 .hidden {
-  display: none;
+  display:none;
+ 
 }
 .title {
   text-align: center;
@@ -142,9 +148,9 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:15px;
 }
 
 .card {
@@ -152,6 +158,7 @@ button {
   height: 100%;
   padding: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
@@ -186,7 +193,7 @@ button {
     padding: 0 20px;
     width: 100%;
   }
-  .card {
-    flex-direction: column;
+  #histories {
+    grid-template-columns: 1fr;
   }
 }
