@@ -10,6 +10,64 @@
   
 </head>
 <body> 
+
+  <h2 class="heading">Some Important JavaScript FAQ </h2>
+   <main style="width:60% ; margin:0 auto">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                What is the difference between localStorage and Session Storage
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">localStorage and sessionStorage are almost the same. Both have the following rules: They store key/value pairs for a particular domain. The values stored may only be strings. They have a limit of around 5MB of storage space. The one major difference between localStorage and sessionStorage is the expiration date. localStorage persists the storage across browser sessions. So even if the domain is opened in a new tab, or the browser is closed and reopened, the storage is saved. There is no expiration. sessionStorage is cleared when the page session ends. A page session lasts as long as the tab or the browser is open. Therefore, when you open a new tab or a new window, this creates a new session and new storage..</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                What is the difference between block scope and Global scope
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Block Scope: A variable when declared inside the if or switch conditions or inside for or while loops, are accessible within that particular condition or loop. To be consise the variables declared inside the curly braces are called as within block scope.
+                The global scope:When the JavaScript engine executes a script, it creates a global execution context.Also, it also assigns variables that you declare outside of functions to the global execution context. These variables are in the global scope. They are also known as global variables.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                What is the event loop in JavaScript
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">The event loop is the secret behind JavaScript’s asynchronous programming. JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.
+          </div>
+        </div>
+      </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                How many ways we can get undefined
+            </button>
+          </h2>
+          <div id="flush-collapseFour"" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <p>1. variable that is not initialized will give undefined</p>
+                <p>2. function with no return</p>
+                <p>3. Parameter that is not pass will be undefined</p>
+                <p>4. if return has nothing on right side will be undefined</p>
+                <p>5. Property that doesn't exist on object will give undefined</p>
+                <p>6. accessing array element outside of the index range</p>
+                <p>7. deleting an element inside an array</p>
+                <p>8. set a value directly to undefined</p>
+          </div>
+        </div>
+      </div>
+        
+   </main>
     
                  <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
